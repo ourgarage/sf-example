@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AuthBundle:Login:login{% endblock %}
+
+{% block body %}
+    <h1>{{ 'login_title'|trans }}</h1>
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_row(form._username, {value: last_username}) }}
+        {{ form_row(form._password) }}
+        <div class="text-right">
+            {{ form_row(form.submit, {attr: {class: 'btn btn-primary'}, label: 'login'|trans}) }}
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

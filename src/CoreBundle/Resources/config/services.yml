@@ -1,0 +1,5 @@
+services:
+    core.locale_listener:
+        class: CoreBundle\EventListener\LocaleListener
+#        tags:
+#            - { name: kernel.event_listener, event: kernel.request }

@@ -1,0 +1,25 @@
+login: Войти
+login_title: Страница авторизации
+login_username: Имя пользователя
+login_password: Пароль
+create_user: Создать пользователя
+users_list: Список пользователей
+nick: Ник
+email: E-mail
+role: Роль
+options: Опции
+save: Сохранить
+password: Пароль
+repeat_password: Повторите пароль
+user: Пользователь
+admin: Администратор
+root: Супер-администратор
+delete: Удалить
+user_management: Управление пользователями
+user_saved: Пользователь сохранен
+edit: Изменить
+status: Статус
+active: Активный
+inactive: Неактивный
+password_changed: Пароль изменен
+edit_user: Изменить пользователя

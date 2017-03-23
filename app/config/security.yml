@@ -1,0 +1,45 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        in_memory:
+            memory: ~
+        from_database:
+            entity:
+                class: UserBundle:User
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            http_basic: ~
+            form_login:
+                login_path: login
+                check_path: login
+                default_target_path: add_user
+            pattern: ^/
+            provider: from_database
+            logout: true
+            logout:
+                path:   /logout
+                target: /{_locale}/login
+
+    encoders:
+        UserBundle\Entity\User:
+            algorithm: bcrypt
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+
+    access_control:
+        - { path: "^/%app.locales%/login", roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: ROLE_ADMIN }
+
+    role_hierarchy:
+        ROLE_ROOT: [ROLE_USER, ROLE_ADMIN]
+        ROLE_ADMIN: [ROLE_USER]

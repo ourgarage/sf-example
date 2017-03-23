@@ -1,0 +1,25 @@
+login: Log in
+login_title: Login page
+login_username: User name
+login_password: Password
+create_user: Create user
+users_list: Users list
+nick: Nickname
+email: E-mail
+role: Role
+options: Options
+save: Save
+password: Password
+repeat_password: Repeat password
+user: User
+admin: Admin
+root: Root
+delete: Delete
+user_management: User management
+user_saved: User saved
+edit: Edit
+status: Status
+active: Active
+inactive: Inactive
+password_changed: Password changed
+edit_user: Edit user

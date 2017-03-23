@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'UserBundle:UserManage:_user_form.html.twig' with {form: form} only %}
+{% endblock %}
+
+{% block title %}{{ parent() }} - {{ 'user_management'|trans }}{% endblock %}

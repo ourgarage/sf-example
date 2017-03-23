@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Symfony test{% endblock %}</title>
+        {% block css %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <a href="{{ logout_path('main') }}">Logout</a>
+            {% for flashMessage in app.session.flashbag.get('info') %}
+                <div class="alert alert-info">
+                    {{ flashMessage|trans }}
+                </div>
+            {% endfor %}
+            {% block body %}{% endblock %}
+        </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% block js %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,8 @@
+<h1>{{ form.email.vars.value is not empty ? 'edit_user'|trans~': '~form.nickname.vars.value: 'create_user'|trans }}</h1>
+
+{{ form_start(form) }}
+    {{ form_rest(form) }}
+    <div class="text-right">
+        <input type="submit" class="btn btn-primary" value="{{ 'save'|trans }}">
+    </div>
+{{ form_end(form) }}
